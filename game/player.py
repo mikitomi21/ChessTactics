@@ -1,10 +1,17 @@
-from enum import Enum, auto
+from enum import Enum
 import numpy as np
+
+from pieces.pawn import Pawn
+from pieces.king import King
+from pieces.queen import Queen
+from pieces.rook import Rook
+from pieces.bishop import Bishop
+from pieces.knight import Knight
 
 
 class Color(Enum):
-    WHITE = auto()
-    BLACK = auto()
+    WHITE = 0
+    BLACK = 1
 
 
 class Player:
@@ -92,3 +99,17 @@ class Player:
                 self.kings,
             ]
         )
+
+    def get_board(self, piece):
+        if isinstance(piece, Pawn):
+            return self.pawns
+        elif isinstance(piece, Rook):
+            return self.rooks
+        elif isinstance(piece, Knight):
+            return self.knights
+        elif isinstance(piece, Bishop):
+            return self.bishops
+        elif isinstance(piece, Queen):
+            return self.queens
+        elif isinstance(piece, King):
+            return self.kings

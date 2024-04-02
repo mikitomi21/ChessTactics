@@ -9,9 +9,10 @@ class GameManager:
 
     def next_player(self):
         self.current_player = (
-            Color.WHITE if self.current_player == Color.BLACK else Color.WHITE
+            Color.WHITE if self.current_player == Color.BLACK else Color.BLACK
         )
 
-    def get_move(self, move: str):
-        piece = Converter.get_piece(move)
-        piece.make_move(self.current_player.)
+    def make_move(self, pos: str):
+        piece = Converter.get_piece(pos)
+        board = self.players[self.current_player.value].get_board(piece)
+        (y_new, x_new), (y_old, x_old) = piece.make_move(board, pos, self.current_player)
