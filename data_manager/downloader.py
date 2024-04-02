@@ -4,5 +4,3 @@ class Downloader:
     def load(username: str, save: bool = False):
         pass
 
-
-print("siema")

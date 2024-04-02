@@ -92,4 +92,3 @@ class Player:
                 self.kings,
             ]
         )
-
